@@ -5,6 +5,35 @@
 ## Overview
 The resulting model combines existent photometric, parallax, and chemical abundance of Lithium data sets of stars belonging to stellar open clusters to infer its age distribution through modern and robust artificial intelligence methods. A Neural Network is trained given a grid of pre-calculated BT-Settl models to interpolate the spectral energy distributions of stars, working as a black-box interpolator in the model. The Bayesian hierarchical model not only facilitates simultaneous inference of star-level parameters but also offers an elegant framework for effectively pooling open cluster information and propagating uncertainty. Markov Chain Monte Carlo techniques allow us to sample the posterior distribution using the Hamiltonian Monte Carlo algorithm.
 
+## Installation
+We recommend using [Anaconda](https://www.anaconda.com/) (or [Miniforge](https://github.com/conda-forge/miniforge)) to install Python on your local machine, which allows for packages to be installed using its conda utility.
+
+Once you have installed one of the above, our software can be installed into a new conda environment as follows*:
+```bash
+# Create conda environment called "envname"
+conda create -c conda-forge -n envname python=3.10
+# Activate the new environment
+conda activate envname
+# Finally install biosc
+pip install git+https://github.com/franciscopalmeromoya/biosc.git
+```
+After completing the installation process, you can confirm its success by running the following command:
+```bash
+python3 main.py
+```
+
+This instructions have been tested on macOS and Ubuntu and have been confirmed to work smoothly. If you encounter any issues or have questions, please do not hesitate to contact us.
+
+*If you are developing, please consider install the package in "editable" mode with `pip install -e`. This allows you to make changes to the source code, and the changes will immediately affect the installed package without the need for reinstalling it.*
+
+## Troubleshooting
+### PyMC
+One of the potential issues comes from the [PyTensor](https://pytensor.readthedocs.io/en/latest/) installation. The library, required for [PyMC](https://www.pymc.io/welcome.html), relies on low-level routines such as BLAS for performing common linear algebra operations. The low-level nature of such routines makes it inconvenient for a seamlessly installation in every device. If you find any problem related to pytensor, please consider manually install PyMC from its repository:
+```bash
+pip install git+https://github.com/pymc-devs/pymc.git
+```
+*Please, note that you can also change the `requirements.txt` file to install it as you did following the installation instructions.*
+
 ## Usage
 To use the Bayesian model, follow these steps:
 1. ***Data Preprocessing***: Use the ``preprocessing`` module to prepare your data, including parallax, photometric, and lithium measurements.
