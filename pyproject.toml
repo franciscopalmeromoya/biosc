@@ -1,0 +1,20 @@
+[project]
+name = "biosc"
+version = "0.1.0"
+authors = [
+  { name="Francisco J. Palmero Moya", email="franciscopalmeromoya@gmail.com" },
+]
+description = "Bayesian Inference of open cluster ages from photometry, parallaxes and Lithium measurements."
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3"
+]
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.packages.find]
+include = ["biosc", "neuralnet"]
+exclude = ["data"]
