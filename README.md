@@ -1,4 +1,4 @@
-# Bayesian Inference on Stellar Clusters (biocs)
+# Bayesian Inference on Stellar Clusters (biosc)
 [![License: GNU GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Python Version](https://img.shields.io/badge/python-%3E%3D3.9-blue.svg)](https://www.python.org/downloads/release)
 
