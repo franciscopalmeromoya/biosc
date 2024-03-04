@@ -167,7 +167,7 @@ class BayesianModel:
             Li, Pho = nnet.predict(inputs.T)
 
             if self.Li_data is not None:
-                Li_true = pm.Deterministic('Li*', Li[:, 0]*3.3) # [L_0] = 3.3 
+                Li_true = pm.Deterministic('Li*', np.log10(Li[:, 0]) + 3.3) # [L_0] = 3.3 
 
             if self.m_data is not None:
                 M = pm.Deterministic('M*', Pho)

@@ -21,7 +21,7 @@ def nearestNeighbor(df, value):
     else:
         return dfmin
 
-class Preproccesing:
+class Preprocessing:
     """Data cleaning"""
     def __init__(self, filename : str, nStars : int = None, sortPho : bool = False):
         """Read dataset file and sample nStars from the generated dataframe
